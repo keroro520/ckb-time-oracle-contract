@@ -1,7 +1,3 @@
-# ckb-time-oracle
+# CKB Time Oracle
 
-TODO: Write this readme
-
-*This project was bootstrapped with [ckb-script-templates].*
-
-[ckb-script-templates]: https://github.com/cryptape/ckb-script-templates
+Read [📜 rfc.md](./docs/rfc.md) for design details.
