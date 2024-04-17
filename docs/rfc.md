@@ -26,7 +26,6 @@ Time Oracle Cell:
     capacity:
     output_data:
         last_updated_timestamp: u64,
-        last_updated_block_number: u64,
     type:
         hash_type: "data1"
         code_hash: Time Oracle Script
@@ -65,8 +64,7 @@ assert!(diff_timestamp > 60s, "Not allowed to update in a time span less than 60
 let anchored_exist = false
 let header_deps = load_header_deps()
 for header_dep in header_deps {
-    if   header_dep.number    == Output_Time_Oracle_Cell.output_data.last_updated_block_number
-      && header_dep.timestamp == Output_Time_Oracle_Cell.output_data.last_updated_block_timestamp {
+    if header_dep.timestamp == Output_Time_Oracle_Cell.output_data.last_updated_block_timestamp {
         anchored_exist = true
         break
     }
@@ -92,12 +90,10 @@ Update Time Oracle Transaction:
     Inputs:
         - Time_Oracle_Cell:
             last_updated_timestamp: 123
-            last_updated_block_number: 456
         - ...
     Outputs:
         - Time_Oracle_Cell
             last_updated_timestamp: 133
-            last_updated_block_number: 466
         - sUDT cell
         - ...
     HeaderDeps:
