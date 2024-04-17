@@ -1,0 +1,5 @@
+array Uint64 [byte; 8];
+
+struct TimeOracle {
+    last_updated_timestamp: Uint64,
+}
