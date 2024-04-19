@@ -7,6 +7,14 @@ pub enum Error {
     ItemMissing = 2,
     LengthNotEnough = 3,
     Encoding = 4,
+
+    UnexpectedOutputTimeOracleCells = 100,
+    UnexpectOracleId = 101,
+    NotFoundAnchoredHeaderDep = 102,
+    NotAllowedToUpdateInATimeSpanLessThan60s = 103,
+    NotAllowedToIssueMoreThan1000000Tokens = 104,
+    InvalidTimeOracleData = 105,
+    Unreachable = 106,
 }
 
 impl From<SysError> for Error {
